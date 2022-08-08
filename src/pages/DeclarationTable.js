@@ -12,14 +12,7 @@ import TimeHelper from '../helpers/time.helper';
 function DeclarationTable() {
   const [loading, setLoading] = useState(false);
   const [totalRows, setTotalRows] = useState(0);
-  const [data, setData] = useState([{
-    _id: '1',
-    name: '1',
-    temperature: 1,
-    hasSymptoms: true,
-    hasContactInLast14Days: true,
-    createdAt: new Date()
-  }]);
+  const [data, setData] = useState([]);
   const [keyword, setKeyword] = useState('');
   const [limit, setLimit] = useState(50);
   const [page, setPage] = useState(1);
@@ -84,7 +77,8 @@ function DeclarationTable() {
   }, 500), []);
   const queryList = async () => {
     setLoading(true);
-    const result = await axios.get('/api/list', {
+    const list_api = '/api/list';
+    const result = await axios.get(list_api, {
       params: {
         keyword,
         sort: sort || {name: 1},
@@ -92,7 +86,9 @@ function DeclarationTable() {
         limit
       }
     })
-    setLoading(false);
+    _.delay(() => {
+      setLoading(false);
+    }, 1000);
     if (result.status === 200) {
       setData(result.data.result);
       setTotalRows(result.data.total);
