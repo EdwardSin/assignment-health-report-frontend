@@ -6,7 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "aws s3 cp ./build s3://healthdeclaration.com/v0.1 --recursive",
+    "deploy": "aws s3 cp ./build s3://healthdeclaration.com --recursive",
     "eject": "react-scripts eject"
   },
   "dependencies": {

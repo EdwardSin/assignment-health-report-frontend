@@ -7,6 +7,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import axios from "axios";
+
+axios.defaults.headers['x-api-key'] = process.env.REACT_APP_API_KEY
 
 function App() {
   return (

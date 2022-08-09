@@ -19,7 +19,7 @@ describe("DeclarationForm component", () => {
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
 
-  test("Submit with empty input", () => {
+  test("check submit with empty input", () => {
     render(<DeclarationForm />);
     const nextButton = screen.getByRole("button", {
       name: "Next",
@@ -30,7 +30,7 @@ describe("DeclarationForm component", () => {
     expect(screen.getAllByText("Please select an option!").length).toBe(2);
   });
 
-  test("Submit successfully", async () => {
+  test("check submit successfully", async () => {
     const { container } = render(<DeclarationForm />);
     const nameInput = container.querySelector('input[name="name"]');
     const temperatureInput = container.querySelector(
