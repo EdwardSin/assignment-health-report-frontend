@@ -28,6 +28,10 @@ Declaration Form:
 Declaration List:
 <kbd>![DeclarationList](./screenshots/02_health_declaration_list.png)</kbd>
 
+## Documents:
+1. [Health Declaration Assignment UI Design](./documents/health-declaration-assignment.xd)
+1. [System Design Architecture Diagram](./documents/design_architecture.drawio)
+
 ## Development:
 ```
 npm start
@@ -76,6 +80,3 @@ Static files will be deployed to S3.
 1. Unit tests for some cases in declaration form
 1. Application deployment to the public
 1. Git commit
-
-## Work haven't done:
-1. CI/CD setup
